@@ -38,6 +38,7 @@ public class ItemPicker : MonoBehaviour {
 				}
 		}
 		if (Input.GetButtonDown ("Fire1")) {
+			if(temPeca)
 			rotate();
 				}
 			}
