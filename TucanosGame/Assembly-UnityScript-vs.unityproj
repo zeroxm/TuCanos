@@ -5,11 +5,11 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{113CA772-BAC8-EB9A-AE15-4CF93A7872C9}</ProjectGuid>
+	<ProjectGuid>{4D9E0D2E-48E7-FC47-DB84-BABD0D032959}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
-	<AssemblyName>Assembly-CSharp</AssemblyName>
+	<AssemblyName>Assembly-UnityScript</AssemblyName>
 	<TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
 	<FileAlignment>512</FileAlignment>
 	<BaseDirectory>Assets</BaseDirectory>
@@ -46,12 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Comeco.cs" />
-     <Compile Include="Assets\Scripts\CameraFollow.cs" />
-     <Compile Include="Assets\Scripts\GameStartScript.cs" />
-     <Compile Include="Assets\Scripts\ItemPicker.cs" />
-     <Compile Include="Assets\Scripts\PipeMovement.cs" />
-     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
+     <Compile Include="Assets\Scripts\GameOver.js" />
+     <Compile Include="Assets\Scripts\Menu.js" />
+     <Compile Include="Assets\Scripts\Pause.js" />
      <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>C:/Users/Victor/Documents/GitHub/TuCanos/TucanosGame/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
