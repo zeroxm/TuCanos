@@ -1,0 +1,39 @@
+Initialize engine version: 5.0.0f4 (5b98b70ebeb9)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA GeForce GTX 550 Ti (ID=0x1244)
+    Vendor:   NVIDIA
+    VRAM:     977 MB
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-CSharp-firstpass.dll (this message is harmless)
+Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-CSharp-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-UnityScript-firstpass.dll (this message is harmless)
+Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-UnityScript-firstpass.dll into Unity Child Domain
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-UnityScript.dll (this message is harmless)
+Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.039 seconds
+desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\System.dll (this message is harmless)
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 3.117951 ms
+
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 842.
+Total: 0.274588 ms (FindLiveObjects: 0.028102 ms CreateObjectMapping: 0.024589 ms MarkObjects: 0.217504 ms  DeleteObjects: 0.003805 ms)
+
+Setting up 1 worker threads for Enlighten.
+  Thread -> id: 480 -> priority: 1 
+Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
+ 
+(Filename:  Line: 1278)
+

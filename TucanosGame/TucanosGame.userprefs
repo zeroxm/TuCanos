@@ -1,9 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\TucanosGame\Assets\Scripts\Pause.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameMonitorScript.cs">
     <Files>
-      <File FileName="..\TucanosGame\Assets\Scripts\Pause.js" Line="14" Column="16" />
-      <File FileName="..\TucanosGame\Assets\Scripts\Menu.js" Line="13" Column="40" />
+      <File FileName="Assets\Scripts\GameMonitorScript.cs" Line="57" Column="1" />
+      <File FileName="Assets\Scripts\GameStartScript.cs" Line="54" Column="57" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

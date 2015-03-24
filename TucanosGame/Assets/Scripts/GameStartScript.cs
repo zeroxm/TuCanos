@@ -7,12 +7,14 @@ public class GameStartScript : MonoBehaviour {
 	public Transform[] spawnPoints;
 	//Quantos Corners tem que spawnar, o resto vai ser preenchido com pipes.
 	public int numCorners;
+	GameMonitorScript gms;
 
 
 	// Use this for initialization
 	void Start () {
 		int pipeIndex = 0, spawnPointIndex = 0, i=0, j=0;
 		bool espacoVago = false;
+		gms = this.GetComponent<GameMonitorScript>();
 		int[] usedIndexes = new int[spawnPoints.Length];
 		for (i=0; i<spawnPoints.Length; i++) {
 			usedIndexes[i]= -1;
@@ -44,10 +46,14 @@ public class GameStartScript : MonoBehaviour {
 			}
 
 			usedIndexes[i]= spawnPointIndex;
-			if(pipeIndex==0)
+			if(pipeIndex==0){
+				gms.setPipe(spawnPoints[spawnPointIndex].position, 6);
 				Instantiate (pipes[pipeIndex], spawnPoints[spawnPointIndex].position, new Quaternion(0,90,0,0));
-			else
+			}
+			else{
+				gms.setPipe(spawnPoints[spawnPointIndex].position, 2);
 				Instantiate (pipes[pipeIndex], spawnPoints[spawnPointIndex].position, new Quaternion(90,0,0,90));
+			}
 			espacoVago=false;
 		}
 
