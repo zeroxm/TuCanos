@@ -5,9 +5,13 @@ public class PipeMovement : MonoBehaviour {
 
 	bool picked =false;
 	Vector3 targetPosition;
+	GameObject gameMonitor;
+	GameMonitorScript gms;
+	public int pipeType;
 	// Use this for initialization
 	void Start () {
-	
+		gameMonitor = GameObject.FindGameObjectWithTag ("GameController");
+		gms = gameMonitor.GetComponent<GameMonitorScript> ();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +28,32 @@ public class PipeMovement : MonoBehaviour {
 	}
 
 	public void rotate(){
-			this.transform.Rotate(0,90,0,0);
+		this.transform.Rotate(0,90,0,0);
+		if (this.pipeType < 3) {
+			switch (pipeType) {
+			case 2:
+				pipeType = 3;
+				break;
+			case 3:
+				pipeType = 2;
+				break;
+			}
+		} else {
+			switch (pipeType) {
+			case 4:
+				pipeType = 5;
+				break;
+			case 5:
+				pipeType = 6;
+				break;
+			case 6:
+				pipeType = 7;
+				break;
+			case 7:
+				pipeType = 4;
+				break;
+			}
+		}
 	}
 
 	public bool putDown(Vector3 currentPosition, Quaternion currentRotation){
@@ -52,4 +81,13 @@ public class PipeMovement : MonoBehaviour {
 		}
 		return true;
 	}
+
+	public void sendPositionToMonitor(){
+		gms.setPipe(this.transform.position, this.pipeType);
+	}
+
+	public void clearPositionOnMonitor(){
+		gms.getPipe(this.transform.position);
+	}
+
 }

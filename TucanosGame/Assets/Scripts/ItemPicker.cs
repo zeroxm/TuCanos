@@ -29,6 +29,7 @@ public class ItemPicker : MonoBehaviour {
 				if (Physics.Raycast (shootRay, out shootHit, 1)) {
 					pipeMovement = shootHit.transform.GetComponent<PipeMovement> ();
 					if (pipeMovement != null) {
+						pipeMovement.clearPositionOnMonitor();
 						pipeMovement.togglePicked ();
 						temPeca = true;
 					}
@@ -54,7 +55,11 @@ public class ItemPicker : MonoBehaviour {
 	}
 
 	bool putDown(){
-		return pipeMovement.putDown (this.transform.position, this.transform.rotation);
+		bool success = pipeMovement.putDown (this.transform.position, this.transform.rotation);
+		if (success)
+			pipeMovement.sendPositionToMonitor ();
+		return success;
+
 }
 }
 
