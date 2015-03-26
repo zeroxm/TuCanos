@@ -29,7 +29,7 @@ public class PipeMovement : MonoBehaviour {
 
 	public void rotate(){
 		this.transform.Rotate(0,90,0,0);
-		if (this.pipeType < 3) {
+		if (this.pipeType < 4) {
 			switch (pipeType) {
 			case 2:
 				pipeType = 3;

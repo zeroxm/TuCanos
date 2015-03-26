@@ -14,7 +14,13 @@ public class GameMonitorScript : MonoBehaviour {
 	const int rightDownCorner = 5;
 	const int downleftCorner = 6 ;
 	const int leftUpCorner = 7;
-	const int end = 8;
+	const int verticalEnd = 8;
+	const int horizontalEnd = 9;
+	const int upRightEnd = 10;
+	const int rightDownEnd = 11;
+	const int downleftEnd = 12;
+	const int leftUpEnd = 13;
+
 
 
 	public int[,] numbers = new int[10, 6] { 	{1, 0, 0, 0, 6, 8},
@@ -62,7 +68,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goDown(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == end) {
+		if (numbers [cursorZ, cursorX] == verticalEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == verticalPipe) {
@@ -81,7 +87,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goUp(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == end) {
+		if (numbers [cursorZ, cursorX] == verticalEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == verticalPipe) {
@@ -100,7 +106,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goLeft(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == end) {
+		if (numbers [cursorZ, cursorX] == verticalEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == horizontalPipe) {
@@ -119,7 +125,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goRight(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == end) {
+		if (numbers [cursorZ, cursorX] == verticalEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == horizontalPipe) {
@@ -144,7 +150,7 @@ public class GameMonitorScript : MonoBehaviour {
 		if (numbers [cursorZ, cursorX]==verticalPipe 
 		    || numbers [cursorZ, cursorX]==upRightCorner
 		    || numbers [cursorZ, cursorX]==leftUpCorner
-		    || numbers [cursorZ, cursorX]==end) {
+		    || numbers [cursorZ, cursorX]==verticalEnd) {
 			return true;
 		}
 		else
@@ -158,7 +164,7 @@ public class GameMonitorScript : MonoBehaviour {
 		if (numbers [cursorZ, cursorX]==verticalPipe 
 		    || numbers [cursorZ, cursorX]==downleftCorner
 		    || numbers [cursorZ, cursorX]==rightDownCorner
-		    || numbers [cursorZ, cursorX]==end) {
+		    || numbers [cursorZ, cursorX]==verticalEnd) {
 			return true;
 		}
 		else
@@ -172,7 +178,7 @@ public class GameMonitorScript : MonoBehaviour {
 		if (numbers [cursorZ, cursorX]==horizontalPipe 
 		    || numbers [cursorZ, cursorX]==rightDownCorner
 		    || numbers [cursorZ, cursorX]==upRightCorner
-		    || numbers [cursorZ, cursorX]==end) {
+		    || numbers [cursorZ, cursorX]==verticalEnd) {
 			return true;
 		}
 		else
@@ -186,7 +192,7 @@ public class GameMonitorScript : MonoBehaviour {
 		if (numbers [cursorZ, cursorX]==horizontalPipe 
 		    || numbers [cursorZ, cursorX]==leftUpCorner
 		    || numbers [cursorZ, cursorX]==downleftCorner
-		    || numbers [cursorZ, cursorX]==end) {
+		    || numbers [cursorZ, cursorX]==verticalEnd) {
 			return true;
 		}
 		else
