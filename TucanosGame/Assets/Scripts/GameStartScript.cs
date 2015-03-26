@@ -12,9 +12,13 @@ public class GameStartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		Debug.Log (Application.loadedLevelName);
+		//string NomeDaFase = Application.loadedLevelName;
 		int pipeIndex = 0, spawnPointIndex = 0, i=0, j=0;
 		bool espacoVago = false;
 		gms = this.GetComponent<GameMonitorScript>();
+		//gms.NomeDaFase = NomeDaFase;
+
 		int[] usedIndexes = new int[spawnPoints.Length];
 		for (i=0; i<spawnPoints.Length; i++) {
 			usedIndexes[i]= -1;

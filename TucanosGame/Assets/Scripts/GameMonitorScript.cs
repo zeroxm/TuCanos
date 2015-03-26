@@ -20,10 +20,14 @@ public class GameMonitorScript : MonoBehaviour {
 	const int rightDownEnd = 11;
 	const int downleftEnd = 12;
 	const int leftUpEnd = 13;
+	public string NomeDaFase;
+	public int[,] numbers;
+
+	
 
 
-
-	public int[,] numbers = new int[10, 6] { 	{1, 0, 0, 0, 6, 8},
+	/*public int[,] numbers = new int[10, 6] { 	
+										{1, 0, 0, 0, 6, 8},
 										{2, 0, 0, 0, 2, 0},
 										{0, 0, 2, 0, 0, 0},
 										{2, 0, 2, 0, 2, 0},
@@ -32,14 +36,25 @@ public class GameMonitorScript : MonoBehaviour {
 										{0, 0, 0, 0, 0, 0},
 										{0, 0, 0, 0, 0, 0},
 										{2, 0, 0, 0, 0, 0},
-										{4, 3, 0, 0, 0, 0}};
+										{4, 3, 0, 0, 0, 0}};*/
 	 
 
 
 
 		// Use this for initialization
 	void Start () {
-			
+		NomeDaFase = Application.loadedLevelName;
+		Debug.Log (NomeDaFase);
+		numbers = MatrixManager.MatrizDaFase(NomeDaFase);
+		string resposta = "";
+		for (int i = 0; i < 10; i++) {
+			for(int j = 0; j < 6; j++)
+			{
+				resposta = resposta + numbers[i,j] + " "; 
+			}
+			resposta = resposta + "\n";
+		}
+		Debug.Log ("Numbers[0,0] = " + resposta);
 	}
 	
 	// Update is called once per frame
