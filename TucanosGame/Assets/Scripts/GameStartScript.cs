@@ -12,7 +12,6 @@ public class GameStartScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log (Application.loadedLevelName);
 		//string NomeDaFase = Application.loadedLevelName;
 		int pipeIndex = 0, spawnPointIndex = 0, i=0, j=0;
 		bool espacoVago = false;

@@ -1,43 +1,63 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public static class MatrixManager {
+public class MatrixManager : MonoBehaviour {
 
-	//Da o numero da fase(1 para fase 1, 2 para fase 2), retorna a matriz da fase selecionada
-	public static int[,] MatrizDaFase(string NomeDaFase)
-	{
-		int[,] MatrizResultante;
+	const int empty = 0;
+	const int start = 1;
+	const int verticalPipe = 2;
+	const int horizontalPipe = 3;
+	const int upRightCorner = 4;
+	const int rightDownCorner = 5;
+	const int downleftCorner = 6 ;
+	const int leftUpCorner = 7;
+	const int verticalEnd = 8;
+	const int horizontalEnd = 9;
+	const int upRightEnd = 10;
+	const int rightDownEnd = 11;
+	const int downleftEnd = 12;
+	const int leftUpEnd = 13;
+	int[,] matriz;
 
-		if (NomeDaFase.Equals("Level_01", System.StringComparison.OrdinalIgnoreCase)) {
-			MatrizResultante = new int[10, 6] 
-			{ 	{1, 0, 0, 0, 6, 8},
-				{2, 0, 0, 0, 2, 0},
-				{0, 0, 2, 0, 0, 0},
-				{2, 0, 2, 0, 2, 0},
-				{2, 0, 2, 0, 4, 7},
-				{0, 0, 2, 0, 0, 0},
-				{0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 0, 0, 0},
-				{2, 0, 0, 0, 0, 0},
-				{4, 3, 0, 0, 0, 0}};
+	// Use this for initialization
+	void Start () {
+		if (Application.loadedLevelName.Equals("Level_01", System.StringComparison.OrdinalIgnoreCase)) {
+			matriz = new int[10, 6] 
+			{ 	{start, empty, empty, empty, downleftCorner, verticalEnd},
+				{verticalPipe, empty, empty, empty, verticalPipe, empty},
+				{empty, empty, verticalPipe, empty, empty, empty},
+				{verticalPipe, empty, verticalPipe, empty, verticalPipe, empty},
+				{verticalPipe, empty, verticalPipe, empty, upRightCorner, leftUpCorner},
+				{empty, empty, verticalPipe, empty, empty, empty},
+				{empty, empty, empty, empty, empty, empty},
+				{empty, empty, empty, empty, empty, empty},
+				{verticalPipe, empty, empty, empty, empty, empty},
+				{upRightCorner, horizontalPipe, empty, empty, empty, empty}};
 		} else
-		if (NomeDaFase.Equals("Level_02", System.StringComparison.OrdinalIgnoreCase)) {
-			MatrizResultante = new int[10, 9] 
-			{ 	{1, 0, 0, 0, 0, 0, 0, 0, 0},
-				{0, 0, 0, 3, 3, 6, 0, 0, 9},
-				{0, 0, 0, 0, 0, 2, 0, 0, 0},
-				{2, 0, 0, 0, 0, 2, 0, 0, 0},
-				{2, 0, 0, 0, 0, 0, 0, 0, 0},
-				{4, 3, 3, 0, 0, 0, 0, 2, 0},
-				{0, 0, 0, 0, 0, 0, 0, 2, 0},
-				{0, 0, 0, 2, 0, 5, 3, 7, 0},
-				{0, 0, 0, 2, 0, 0, 0, 0, 0},
-				{0, 0, 0, 4, 3, 3, 0, 0, 0}};
+		if (Application.loadedLevelName.Equals("Level_02", System.StringComparison.OrdinalIgnoreCase)) {
+			matriz = new int[10, 9] 
+			{ 	{start, empty, empty, empty, empty, empty, empty, empty, empty},
+				{empty, empty, empty, horizontalPipe, horizontalPipe, downleftCorner, empty, empty, horizontalEnd},
+				{empty, empty, empty, empty, empty, verticalPipe, empty, empty, empty},
+				{verticalPipe, empty, empty, empty, empty, verticalPipe, empty, empty, empty},
+				{verticalPipe, empty, empty, empty, empty, empty, empty, empty, empty},
+				{upRightCorner, horizontalPipe, horizontalPipe, empty, empty, empty, empty, verticalPipe, empty},
+				{empty, empty, empty, empty, empty, empty, empty, verticalPipe, empty},
+				{empty, empty, empty, verticalPipe, empty, rightDownCorner, horizontalPipe, leftUpCorner, empty},
+				{empty, empty, empty, verticalPipe, empty, empty, empty, empty, empty},
+				{empty, empty, empty, upRightCorner, horizontalPipe, horizontalPipe, empty, empty, empty}};
 		} else {
-			MatrizResultante = new int[1, 1]{{1}};
+			matriz = new int[start, start]{{start}};
 			Debug.Log("ERRO: MATRIZ DA FASE NAO EXISTE");
 		}
-		return MatrizResultante;
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
 	}
 
+	public int[,] getMatrix(){
+		return matriz;
+	}
 }

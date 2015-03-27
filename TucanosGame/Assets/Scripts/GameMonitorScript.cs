@@ -5,6 +5,8 @@ public class GameMonitorScript : MonoBehaviour {
 
 	public int xConvertionFactor;
 	public int zConvertionFactor;
+	public int horizontalSize;
+	public int verticalSize;
 	bool winner=false;
 	const int empty = 0;
 	const int start = 1;
@@ -20,8 +22,8 @@ public class GameMonitorScript : MonoBehaviour {
 	const int rightDownEnd = 11;
 	const int downleftEnd = 12;
 	const int leftUpEnd = 13;
-	public string NomeDaFase;
-	public int[,] numbers;
+	MatrixManager mm;	
+	int[,] numbers;
 
 	
 
@@ -43,18 +45,12 @@ public class GameMonitorScript : MonoBehaviour {
 
 		// Use this for initialization
 	void Start () {
-		NomeDaFase = Application.loadedLevelName;
-		Debug.Log (NomeDaFase);
-		numbers = MatrixManager.MatrizDaFase(NomeDaFase);
-		string resposta = "";
-		for (int i = 0; i < 10; i++) {
-			for(int j = 0; j < 6; j++)
-			{
-				resposta = resposta + numbers[i,j] + " "; 
-			}
-			resposta = resposta + "\n";
-		}
-		Debug.Log ("Numbers[0,0] = " + resposta);
+		mm = this.GetComponent<MatrixManager>();
+		numbers = mm.getMatrix ();
+/*		foreach (int i in numbers)
+		{
+			Debug.Log(i);
+		} */
 	}
 	
 	// Update is called once per frame
@@ -63,6 +59,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	public void setPipe(Vector3 position, int pipeType){
+
 		numbers[zConvertionFactor-Mathf.RoundToInt(position.z),Mathf.RoundToInt(position.x)-xConvertionFactor]=pipeType;
 		didIWin ();
 
@@ -83,7 +80,13 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goDown(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == verticalEnd) {
+		//Debug.Log (numbers [cursorZ, cursorX]);
+		if (numbers [cursorZ, cursorX] == verticalEnd 
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == verticalPipe) {
@@ -102,7 +105,13 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goUp(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == verticalEnd) {
+		//Debug.Log (numbers [cursorZ, cursorX]);
+		if (numbers [cursorZ, cursorX] == verticalEnd 
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == verticalPipe) {
@@ -121,7 +130,13 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goLeft(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == verticalEnd) {
+		//Debug.Log (numbers [cursorZ, cursorX]);
+		if (numbers [cursorZ, cursorX] == verticalEnd 
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == horizontalPipe) {
@@ -140,7 +155,13 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goRight(int cursorZ, int cursorX){
-		if (numbers [cursorZ, cursorX] == verticalEnd) {
+		//Debug.Log (numbers [cursorZ, cursorX]);
+		if (numbers [cursorZ, cursorX] == verticalEnd 
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			winner = true;
 			Debug.Log (winner);
 		} else if (numbers [cursorZ, cursorX] == horizontalPipe) {
@@ -159,13 +180,18 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	bool canIGoDown(int cursorZ, int cursorX){
-		if (cursorX < 0 || cursorZ < 0 || cursorX > 5 || cursorZ > 9) {
+		if (cursorX < 0 || cursorZ < 0 || cursorX > (horizontalSize-1) || cursorZ > (verticalSize-1)) {
 			return false;
 		}
 		if (numbers [cursorZ, cursorX]==verticalPipe 
 		    || numbers [cursorZ, cursorX]==upRightCorner
 		    || numbers [cursorZ, cursorX]==leftUpCorner
-		    || numbers [cursorZ, cursorX]==verticalEnd) {
+		    || numbers [cursorZ, cursorX]==verticalEnd
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			return true;
 		}
 		else
@@ -173,13 +199,18 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	bool canIGoUp(int cursorZ, int cursorX){
-		if (cursorX < 0 || cursorZ < 0 || cursorX > 5 || cursorZ > 9) {
+		if (cursorX < 0 || cursorZ < 0 || cursorX > (horizontalSize-1) || cursorZ > (verticalSize-1)) {
 			return false;
 		}
 		if (numbers [cursorZ, cursorX]==verticalPipe 
 		    || numbers [cursorZ, cursorX]==downleftCorner
 		    || numbers [cursorZ, cursorX]==rightDownCorner
-		    || numbers [cursorZ, cursorX]==verticalEnd) {
+		    || numbers [cursorZ, cursorX]==verticalEnd
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			return true;
 		}
 		else
@@ -187,13 +218,18 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	bool canIGoLeft(int cursorZ, int cursorX){
-		if (cursorX < 0 || cursorZ < 0 || cursorX > 5 || cursorZ > 9) {
+		if (cursorX < 0 || cursorZ < 0 || cursorX > (horizontalSize-1) || cursorZ > (verticalSize-1)) {
 			return false;
 		}
 		if (numbers [cursorZ, cursorX]==horizontalPipe 
 		    || numbers [cursorZ, cursorX]==rightDownCorner
 		    || numbers [cursorZ, cursorX]==upRightCorner
-		    || numbers [cursorZ, cursorX]==verticalEnd) {
+		    || numbers [cursorZ, cursorX]==verticalEnd
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			return true;
 		}
 		else
@@ -201,13 +237,19 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	bool canIGoRight(int cursorZ, int cursorX){
-		if (cursorX < 0 || cursorZ < 0 || cursorX > 5 || cursorZ > 9) {
+
+		if (cursorX < 0 || cursorZ < 0 || cursorX > (horizontalSize-1) || cursorZ > (verticalSize-1)) {
 			return false;
 		}
 		if (numbers [cursorZ, cursorX]==horizontalPipe 
 		    || numbers [cursorZ, cursorX]==leftUpCorner
 		    || numbers [cursorZ, cursorX]==downleftCorner
-		    || numbers [cursorZ, cursorX]==verticalEnd) {
+		    || numbers [cursorZ, cursorX]==verticalEnd
+		    || numbers [cursorZ, cursorX] == horizontalEnd
+		    || numbers [cursorZ, cursorX] == upRightEnd
+		    || numbers [cursorZ, cursorX] == rightDownEnd
+		    || numbers [cursorZ, cursorX] == downleftEnd
+		    || numbers [cursorZ, cursorX] == leftUpEnd) {
 			return true;
 		}
 		else
