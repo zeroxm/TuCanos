@@ -7,6 +7,7 @@ public class GameMonitorScript : MonoBehaviour {
 	public int zConvertionFactor;
 	public int horizontalSize;
 	public int verticalSize;
+	public PlayerMovement playerMovement;
 	bool winner=false;
 	const int empty = 0;
 	const int start = 1;
@@ -24,24 +25,6 @@ public class GameMonitorScript : MonoBehaviour {
 	const int leftUpEnd = 13;
 	MatrixManager mm;	
 	int[,] numbers;
-
-	
-
-
-	/*public int[,] numbers = new int[10, 6] { 	
-										{1, 0, 0, 0, 6, 8},
-										{2, 0, 0, 0, 2, 0},
-										{0, 0, 2, 0, 0, 0},
-										{2, 0, 2, 0, 2, 0},
-										{2, 0, 2, 0, 4, 7},
-										{0, 0, 2, 0, 0, 0},
-										{0, 0, 0, 0, 0, 0},
-										{0, 0, 0, 0, 0, 0},
-										{2, 0, 0, 0, 0, 0},
-										{4, 3, 0, 0, 0, 0}};*/
-	 
-
-
 
 		// Use this for initialization
 	void Start () {
@@ -79,16 +62,13 @@ public class GameMonitorScript : MonoBehaviour {
 		}
 	}
 
+
 	void goDown(int cursorZ, int cursorX){
 		//Debug.Log (numbers [cursorZ, cursorX]);
 		if (numbers [cursorZ, cursorX] == verticalEnd 
-		    || numbers [cursorZ, cursorX] == horizontalEnd
 		    || numbers [cursorZ, cursorX] == upRightEnd
-		    || numbers [cursorZ, cursorX] == rightDownEnd
-		    || numbers [cursorZ, cursorX] == downleftEnd
 		    || numbers [cursorZ, cursorX] == leftUpEnd) {
-			winner = true;
-			Debug.Log (winner);
+			startGameWinningProcess();
 		} else if (numbers [cursorZ, cursorX] == verticalPipe) {
 			cursorZ++;
 			if (canIGoDown (cursorZ, cursorX))
@@ -107,13 +87,9 @@ public class GameMonitorScript : MonoBehaviour {
 	void goUp(int cursorZ, int cursorX){
 		//Debug.Log (numbers [cursorZ, cursorX]);
 		if (numbers [cursorZ, cursorX] == verticalEnd 
-		    || numbers [cursorZ, cursorX] == horizontalEnd
-		    || numbers [cursorZ, cursorX] == upRightEnd
 		    || numbers [cursorZ, cursorX] == rightDownEnd
-		    || numbers [cursorZ, cursorX] == downleftEnd
-		    || numbers [cursorZ, cursorX] == leftUpEnd) {
-			winner = true;
-			Debug.Log (winner);
+		    || numbers [cursorZ, cursorX] == downleftEnd) {
+			startGameWinningProcess();
 		} else if (numbers [cursorZ, cursorX] == verticalPipe) {
 			cursorZ--;
 			if (canIGoUp (cursorZ, cursorX))
@@ -131,14 +107,10 @@ public class GameMonitorScript : MonoBehaviour {
 
 	void goLeft(int cursorZ, int cursorX){
 		//Debug.Log (numbers [cursorZ, cursorX]);
-		if (numbers [cursorZ, cursorX] == verticalEnd 
-		    || numbers [cursorZ, cursorX] == horizontalEnd
+		if (numbers [cursorZ, cursorX] == horizontalEnd
 		    || numbers [cursorZ, cursorX] == upRightEnd
-		    || numbers [cursorZ, cursorX] == rightDownEnd
-		    || numbers [cursorZ, cursorX] == downleftEnd
-		    || numbers [cursorZ, cursorX] == leftUpEnd) {
-			winner = true;
-			Debug.Log (winner);
+		    || numbers [cursorZ, cursorX] == rightDownEnd) {
+			startGameWinningProcess();
 		} else if (numbers [cursorZ, cursorX] == horizontalPipe) {
 			cursorX--;
 			if (canIGoLeft(cursorZ, cursorX))
@@ -156,14 +128,10 @@ public class GameMonitorScript : MonoBehaviour {
 
 	void goRight(int cursorZ, int cursorX){
 		//Debug.Log (numbers [cursorZ, cursorX]);
-		if (numbers [cursorZ, cursorX] == verticalEnd 
-		    || numbers [cursorZ, cursorX] == horizontalEnd
-		    || numbers [cursorZ, cursorX] == upRightEnd
-		    || numbers [cursorZ, cursorX] == rightDownEnd
+		if (numbers [cursorZ, cursorX] == horizontalEnd
 		    || numbers [cursorZ, cursorX] == downleftEnd
 		    || numbers [cursorZ, cursorX] == leftUpEnd) {
-			winner = true;
-			Debug.Log (winner);
+			startGameWinningProcess();
 		} else if (numbers [cursorZ, cursorX] == horizontalPipe) {
 			cursorX++;
 			if (canIGoRight(cursorZ, cursorX))
@@ -254,5 +222,9 @@ public class GameMonitorScript : MonoBehaviour {
 		}
 		else
 			return false;
+	}
+
+	void startGameWinningProcess(){
+
 	}
 }

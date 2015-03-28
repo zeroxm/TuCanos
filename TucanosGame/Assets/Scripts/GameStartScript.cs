@@ -1,12 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameStartScript : MonoBehaviour {
 
 	public GameObject[] pipes;
 	public Transform[] spawnPoints;
-	//Quantos Corners tem que spawnar, o resto vai ser preenchido com pipes.
 	public int numCorners;
+	public GameObject HUD;
+	Animator HUDAnimator;
+	AudioSource bgm;
+	TimerManager timerManager;
+	//Quantos Corners tem que spawnar, o resto vai ser preenchido com pipes.
+
 	GameMonitorScript gms;
 
 
@@ -16,6 +22,7 @@ public class GameStartScript : MonoBehaviour {
 		int pipeIndex = 0, spawnPointIndex = 0, i=0, j=0;
 		bool espacoVago = false;
 		gms = this.GetComponent<GameMonitorScript>();
+		timerManager = HUD.GetComponentInChildren<TimerManager> ();
 
 		int[] usedIndexes = new int[spawnPoints.Length];
 		for (i=0; i<spawnPoints.Length; i++) {
@@ -58,11 +65,16 @@ public class GameStartScript : MonoBehaviour {
 			}
 			espacoVago=false;
 		}
-
+		HUDAnimator = HUD.GetComponent<Animator> ();
+		HUDAnimator.SetTrigger ("Start");
+		bgm = this.GetComponent<AudioSource> ();
+		bgm.Play ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
+			if (HUDAnimator.GetCurrentAnimatorStateInfo (0).IsName ("GameStartClip")) 
+			timerManager.restart();
 	}
 
 

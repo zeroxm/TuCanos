@@ -26,7 +26,7 @@ public class ItemPicker : MonoBehaviour {
 			if (!temPeca) {
 				shootRay.origin = transform.position;
 				shootRay.direction = transform.TransformDirection (Vector3.back);
-				if (Physics.Raycast (shootRay, out shootHit, 1)) {
+				if (Physics.Raycast (shootRay, out shootHit, 1.2f)) {
 					pipeMovement = shootHit.transform.GetComponent<PipeMovement> ();
 					if (pipeMovement != null) {
 						pipeMovement.clearPositionOnMonitor();
@@ -38,7 +38,7 @@ public class ItemPicker : MonoBehaviour {
 			else{
 				shootRay.origin = transform.position;
 				shootRay.direction = transform.TransformDirection (Vector3.back);
-				if (Physics.Raycast (shootRay, out shootHit, 1))
+				if (Physics.Raycast (shootRay, out shootHit, 1.2f))
 					print("Too close to PutDown");
 				else if(putDown())
 					temPeca= false;
