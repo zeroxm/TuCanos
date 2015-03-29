@@ -18,7 +18,7 @@ Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed
 Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.035 seconds
+- Completed reload, in  0.043 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -26,46 +26,26 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\System.dll (this message is harmless)
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.631128 ms
+UnloadTime: 2.905423 ms
 
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 997.
-Total: 0.259951 ms (FindLiveObjects: 0.029566 ms CreateObjectMapping: 0.023711 ms MarkObjects: 0.198769 ms  DeleteObjects: 0.007611 ms)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 1009.
+Total: 0.290103 ms (FindLiveObjects: 0.028395 ms CreateObjectMapping: 0.042446 ms MarkObjects: 0.193499 ms  DeleteObjects: 0.025760 ms)
 
 Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
  
 (Filename:  Line: 1278)
 
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 14e4 -> priority: 1 
-Too close to PutDown
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Too close to PutDown
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Too close to PutDown
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Too close to PutDown
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
-Too close to PutDown
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
-
+  Thread -> id: 115c -> priority: 1 
 Too close to PutDown
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.245307 ms
+UnloadTime: 1.373233 ms
 
-Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1175.
-Total: 0.225700 ms (FindLiveObjects: 0.031322 ms CreateObjectMapping: 0.018149 ms MarkObjects: 0.166860 ms  DeleteObjects: 0.008782 ms)
+Unloading 5 unused Assets to reduce memory usage. Loaded Objects now: 1187.
+Total: 0.240630 ms (FindLiveObjects: 0.032493 ms CreateObjectMapping: 0.018149 ms MarkObjects: 0.181790 ms  DeleteObjects: 0.007611 ms)
 
 Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
  
@@ -84,8 +64,8 @@ Too close to PutDown
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebug.gen.cpp Line: 56)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 2.028088 ms
+UnloadTime: 1.095717 ms
 
-Unloading 68 unused Assets to reduce memory usage. Loaded Objects now: 217.
-Total: 0.751458 ms (FindLiveObjects: 0.028102 ms CreateObjectMapping: 0.032493 ms MarkObjects: 0.382022 ms  DeleteObjects: 0.307667 ms)
+Unloading 73 unused Assets to reduce memory usage. Loaded Objects now: 218.
+Total: 0.401929 ms (FindLiveObjects: 0.016686 ms CreateObjectMapping: 0.016100 ms MarkObjects: 0.203160 ms  DeleteObjects: 0.165689 ms)
 

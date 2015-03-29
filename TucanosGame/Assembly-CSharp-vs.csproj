@@ -53,6 +53,7 @@
      <Compile Include="Assets\Scripts\GameStartScript.cs" />
      <Compile Include="Assets\Scripts\ItemPicker.cs" />
      <Compile Include="Assets\Scripts\MatrixManager.cs" />
+     <Compile Include="Assets\Scripts\NextStageManager.cs" />
      <Compile Include="Assets\Scripts\Pause.cs" />
      <Compile Include="Assets\Scripts\PipeMovement.cs" />
      <Compile Include="Assets\Scripts\PlayerMovement.cs" />

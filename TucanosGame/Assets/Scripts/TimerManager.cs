@@ -9,17 +9,20 @@ public class TimerManager : MonoBehaviour {
 	Text text;
 	int minutes;
 	int seconds;
-
+	bool stoped;
 	
 	
 	void Awake ()
 	{
 		startTime = Time.time;
+		stoped = false;
 		text = GetComponent <Text> ();
 	}
 
 	void Update ()
 	{
+		if (stoped)
+			return;
 			currentTime = Time.time - startTime;
 			minutes = (int)currentTime/60;
 			seconds = (int)currentTime%60;
@@ -32,6 +35,10 @@ public class TimerManager : MonoBehaviour {
 
 	public float getCurrentTime(){
 		return currentTime;
+	}
+
+	public void stop(){
+		stoped = true;
 	}
 
 }
