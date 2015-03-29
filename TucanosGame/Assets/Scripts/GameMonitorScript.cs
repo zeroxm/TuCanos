@@ -218,6 +218,10 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void startGameWinningProcess(){
-
+		//stopMusic
+		//stopTimer
+		//fillremainingPipes
+		//showWinnerScreen
+		//LoadNextStage
 	}
 }
