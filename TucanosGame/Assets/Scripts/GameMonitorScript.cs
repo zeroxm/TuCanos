@@ -8,7 +8,6 @@ public class GameMonitorScript : MonoBehaviour {
 	public int horizontalSize;
 	public int verticalSize;
 	public PlayerMovement playerMovement;
-	bool winner=false;
 	const int empty = 0;
 	const int start = 1;
 	const int verticalPipe = 2;
@@ -24,7 +23,7 @@ public class GameMonitorScript : MonoBehaviour {
 	const int downleftEnd = 12;
 	const int leftUpEnd = 13;
 	MatrixManager mm;	
-	public int[,] numbers;
+	int[,] numbers;
 
 		// Use this for initialization
 	void Start () {
@@ -218,6 +217,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void startGameWinningProcess(){
+		Application.LoadLevel("Level_02");
 		//stopMusic
 		//stopTimer
 		//fillremainingPipes
