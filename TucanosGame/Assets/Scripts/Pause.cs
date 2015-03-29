@@ -8,7 +8,7 @@ public class Pause : MonoBehaviour {
 	float altura;
 	float largura;
 
-	GUISkin skin;
+	public GUISkin skin;
 
 	bool controlePause;
 
@@ -17,7 +17,7 @@ public class Pause : MonoBehaviour {
 	void Start () {
 		controlePause = true;
 		largura = 300;
-		altura = 60;
+		altura = 55;
 		posicaoX = Screen.width/2 - largura/2;
 		posicaoY = Screen.height/2 - altura/2;
 	}
@@ -38,14 +38,16 @@ public class Pause : MonoBehaviour {
 
 	void OnGUI(){
 		GUI.skin = skin;
+
 		if (!controlePause){
 			GUI.Box(new Rect(0,0,Screen.width,Screen.height),"");
-		if(GUI.Button(new Rect(posicaoX,posicaoY + 25,largura,altura),"Start")){
+		if(GUI.Button(new Rect(posicaoX,posicaoY + 10,largura,altura),"Start")){
 			Time.timeScale = 1;
 			controlePause = true;
 		}
-		if(GUI.Button(new Rect(posicaoX,posicaoY + 100,largura,altura),"Exit")){
-			Application.Quit();
+		if(GUI.Button(new Rect(posicaoX,posicaoY + 75,largura,altura),"Exit")){
+			Application.LoadLevel("MenuPrincipal");
+			//Application.Quit();
 		}
 	}	
 }
