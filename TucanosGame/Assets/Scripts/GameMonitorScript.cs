@@ -8,6 +8,8 @@ public class GameMonitorScript : MonoBehaviour {
 	public int horizontalSize;
 	public int verticalSize;
 	public PlayerMovement playerMovement;
+	public TimerManager timerManager;
+	public Animator hudAnimator;
 	const int empty = 0;
 	const int start = 1;
 	const int verticalPipe = 2;
@@ -23,21 +25,33 @@ public class GameMonitorScript : MonoBehaviour {
 	const int downleftEnd = 12;
 	const int leftUpEnd = 13;
 	MatrixManager mm;	
+	AudioSource[] audioSources; 
+	NextStageManager nextStage;
 	int[,] numbers;
+	bool winner;
 
 		// Use this for initialization
 	void Start () {
-		mm = this.GetComponent<MatrixManager>();
+		winner = false;
+		mm = this.GetComponent<MatrixManager> ();
 		numbers = mm.getMatrix ();
-/*		foreach (int i in numbers)
-		{
-			Debug.Log(i);
-		} */
+		audioSources = this.GetComponents<AudioSource> ();
+		nextStage = this.GetComponent<NextStageManager> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+			if (hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("GameFinishWin")) 
+			winner = true;
+			if (winner && hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("GameFinishWinWaitScreen") && Input.GetButtonDown ("Jump")) {
+			hudAnimator.SetTrigger ("NextStage");
+			}
+			if (winner && hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("GameFadeOut")) {	
+			audioSources [2].Play ();
+			winner = false;
+			}
+			if (hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("NextStage")) 
+			Application.LoadLevel(nextStage.getNextStage());
 	}
 
 	public void setPipe(Vector3 position, int pipeType){
@@ -218,11 +232,10 @@ public class GameMonitorScript : MonoBehaviour {
 
 	void startGameWinningProcess()
 	{
-		Application.LoadLevel("Level_02");
-		//stopMusic
-		//stopTimer
-		//fillremainingPipes
-		//showWinnerScreen
-		//LoadNextStage
+		playerMovement.disable ();
+		audioSources [0].Stop ();
+		timerManager.stop ();
+		audioSources [1].Play ();
+		hudAnimator.SetTrigger ("Win");
 	}
 }
