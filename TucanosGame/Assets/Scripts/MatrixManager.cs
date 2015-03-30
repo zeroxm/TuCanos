@@ -47,8 +47,23 @@ public class MatrixManager : MonoBehaviour {
 				{empty, empty, empty, verticalPipe, empty, empty, empty, empty, empty},
 				{empty, empty, empty, upRightCorner, horizontalPipe, horizontalPipe, empty, empty, empty}};
 		} else {
-			matriz = new int[start, start]{{start}};
-			Debug.Log("ERRO: MATRIZ DA FASE NAO EXISTE");
+			if (Application.loadedLevelName.Equals("Level_03", System.StringComparison.OrdinalIgnoreCase)) 
+			{
+				matriz = new int[10, 12] 
+				{ 	{start, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty},
+					{verticalPipe, empty, rightDownCorner, horizontalPipe, horizontalPipe, horizontalPipe, empty, empty, empty, empty, empty, empty},
+					{verticalPipe, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty},
+					{empty, horizontalPipe, downleftCorner, empty, empty, empty, verticalPipe, empty, empty, empty, horizontalPipe, empty},
+					{empty, empty, empty, empty, verticalPipe, empty, verticalPipe, empty, empty, empty, empty, upRightEnd},
+					{empty, horizontalPipe, leftUpCorner, empty, verticalPipe, empty, verticalPipe, empty, empty, empty, empty, empty},
+					{empty, empty, empty, empty, empty, empty, empty, empty, verticalPipe, empty, empty, empty},
+					{upRightCorner, downleftCorner, empty, empty, empty, empty, empty, empty, verticalPipe, empty, empty, empty},
+					{empty, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty},
+					{empty, empty, empty, horizontalPipe, leftUpCorner, empty, upRightCorner, horizontalPipe, leftUpCorner, empty, empty, empty}};
+			}else
+			{
+				Debug.Log("ERRO: MATRIZ DA FASE NAO EXISTE");
+			}
 		}
 	}
 	

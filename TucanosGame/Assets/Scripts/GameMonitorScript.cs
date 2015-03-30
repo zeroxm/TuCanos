@@ -41,7 +41,7 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	public void setPipe(Vector3 position, int pipeType){
-
+		Debug.Log (numbers [zConvertionFactor - Mathf.RoundToInt (position.z), Mathf.RoundToInt (position.x) - xConvertionFactor]);
 		numbers[zConvertionFactor-Mathf.RoundToInt(position.z),Mathf.RoundToInt(position.x)-xConvertionFactor]=pipeType;
 		didIWin ();
 
@@ -216,7 +216,8 @@ public class GameMonitorScript : MonoBehaviour {
 		return numbers [z, x];
 	}
 
-	void startGameWinningProcess(){
+	void startGameWinningProcess()
+	{
 		Application.LoadLevel("Level_02");
 		//stopMusic
 		//stopTimer
