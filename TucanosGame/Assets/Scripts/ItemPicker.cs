@@ -9,11 +9,14 @@ public class ItemPicker : MonoBehaviour {
 	RaycastHit shootHit;
 	bool temPeca = false;
 	PipeMovement pipeMovement;
+	PlayerMovement playerMovement;
 	GameObject mainCamera;
 	Pause pause;
+	bool disabled;
 	
 	// Use this for initialization
 	void Start () {
+		playerMovement = this.GetComponent<PlayerMovement> ();
 		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 		pause = mainCamera.GetComponent<Pause> ();
 	}
@@ -21,6 +24,8 @@ public class ItemPicker : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (pause.isPaused())
+			return;
+		if (playerMovement.isDisabled())
 			return;
 		if (Input.GetButtonDown ("Jump")) {
 			if (!temPeca) {
