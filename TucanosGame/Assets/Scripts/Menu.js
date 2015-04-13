@@ -22,19 +22,19 @@ function OnGUI(){
 
     GUI.skin = skin;
     
-	if(GUI.Button(Rect(posicaoX,posicaoY - 45,largura,altura),"1p Game")){
+	if(GUI.Button(Rect(posicaoX,posicaoY + 20,largura,altura),"1p Game")){
 		Application.LoadLevel("Level_01");
 	}
 	
-	if(GUI.Button(Rect(posicaoX,posicaoY + 15,largura,altura),"2p Coop")){
+	if(GUI.Button(Rect(posicaoX,posicaoY + 80,largura,altura),"2p Coop")){
 		Application.LoadLevel("Level_01");
 	}
 	
-	if(GUI.Button(Rect(posicaoX,posicaoY + 75,largura,altura),"Time Atack")){
+	if(GUI.Button(Rect(posicaoX,posicaoY + 140,largura,altura),"Time Atack")){
 		Application.LoadLevel("Level_01");
 	}
 	
-	if(GUI.Button(Rect(posicaoX,posicaoY + 135,largura,altura),"Exit")){
+	if(GUI.Button(Rect(posicaoX,posicaoY + 200,largura,altura),"Exit")){
 		Application.Quit();
 	}
 }
