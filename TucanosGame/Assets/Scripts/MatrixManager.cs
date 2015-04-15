@@ -33,8 +33,21 @@ public class MatrixManager : MonoBehaviour {
 				{empty, empty, empty, empty, empty, empty},
 				{verticalPipe, empty, empty, empty, empty, empty},
 				{upRightCorner, horizontalPipe, empty, empty, empty, empty}};
-		} else
-		if (Application.loadedLevelName.Equals("Level_02", System.StringComparison.OrdinalIgnoreCase)) {
+		} else 
+			if (Application.loadedLevelName.Equals("Level_02", System.StringComparison.OrdinalIgnoreCase)) {
+				matriz = new int[10, 6] 
+				{ 	{start, empty, empty, empty, empty, verticalEnd},
+				{empty, empty, rightDownCorner, horizontalPipe, horizontalPipe, empty},
+					{verticalPipe, empty, empty, empty, empty, empty},
+					{upRightCorner, horizontalPipe, empty, empty, empty, empty},
+					{empty, empty, verticalPipe, empty, verticalPipe, empty},
+					{empty, empty, leftUpCorner, empty, verticalPipe, empty},
+					{verticalPipe, empty, empty, empty, empty, empty},
+					{upRightCorner, downleftCorner, empty, empty, empty, empty},
+					{empty, empty, empty, empty, empty, empty},
+					{empty, empty, empty, horizontalPipe, leftUpCorner, empty}};
+			} else
+		if (Application.loadedLevelName.Equals("Level_03", System.StringComparison.OrdinalIgnoreCase)) {
 			matriz = new int[10, 9] 
 			{ 	{start, empty, empty, empty, empty, empty, empty, empty, empty},
 				{empty, empty, empty, horizontalPipe, horizontalPipe, downleftCorner, empty, empty, horizontalEnd},
@@ -47,7 +60,7 @@ public class MatrixManager : MonoBehaviour {
 				{empty, empty, empty, verticalPipe, empty, empty, empty, empty, empty},
 				{empty, empty, empty, upRightCorner, horizontalPipe, horizontalPipe, empty, empty, empty}};
 		} else {
-			if (Application.loadedLevelName.Equals("Level_03", System.StringComparison.OrdinalIgnoreCase)) 
+			if (Application.loadedLevelName.Equals("Level_05", System.StringComparison.OrdinalIgnoreCase)) 
 			{
 				matriz = new int[10, 12] 
 				{ 	{start, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty, empty},
