@@ -1,11 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\TucanosGame\Assets\Scripts\ItemPicker.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\TucanosGame\Assets\Scripts\Menu.js">
     <Files>
-      <File FileName="..\TucanosGame\Assets\Scripts\GameMonitorScript.cs" Line="59" Column="50" />
-      <File FileName="..\TucanosGame\Assets\Scripts\MatrixManager.cs" Line="89" Column="14" />
-      <File FileName="..\TucanosGame\Assets\Scripts\GameStartScript.cs" Line="1" Column="1" />
-      <File FileName="..\TucanosGame\Assets\Scripts\ItemPicker.cs" Line="26" Column="10" />
+      <File FileName="..\TucanosGame\Assets\Scripts\Menu.js" Line="40" Column="2" />
+      <File FileName="..\TucanosGame\Assets\Scripts\CameraFollow.cs" Line="23" Column="1" />
+      <File FileName="..\TucanosGame\Assets\Scripts\GameMonitorScript.cs" Line="1" Column="1" />
+      <File FileName="..\TucanosGame\Assets\Scripts\MatrixManager.cs" Line="1" Column="1" />
+      <File FileName="..\TucanosGame\Assets\Scripts\GameStartScript.cs" Line="83" Column="1" />
+      <File FileName="..\TucanosGame\Assets\Scripts\ItemPicker.cs" Line="71" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
