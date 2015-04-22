@@ -8,6 +8,7 @@ public class GameMonitorScript : MonoBehaviour {
 	public int horizontalSize;
 	public int verticalSize;
 	public PlayerMovement playerMovement;
+	public ScoreManager scoreManager;
 	public TimerManager timerManager;
 	public Animator hudAnimator;
 	const int empty = 0;
@@ -230,7 +231,7 @@ public class GameMonitorScript : MonoBehaviour {
 	{
 		playerMovement.disable ();
 		audioSources [0].Stop ();
-		timerManager.stop ();
+		scoreManager.setTimeDecay(timerManager.stop ());
 		audioSources [1].Play ();
 		hudAnimator.SetTrigger ("Win");
 	}
@@ -245,5 +246,13 @@ public class GameMonitorScript : MonoBehaviour {
 
 	public bool isWinner(){
 		return winner;
+	}
+
+	public void addBlue(){
+		scoreManager.addBlue ();
+	}
+
+	public void addGreen(){
+		scoreManager.addGreen ();
 	}
 }

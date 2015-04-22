@@ -37,8 +37,9 @@ public class TimerManager : MonoBehaviour {
 		return currentTime;
 	}
 
-	public void stop(){
+	public int stop(){
 		stoped = true;
+		return (int)currentTime;
 	}
 
 }

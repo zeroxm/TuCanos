@@ -225,7 +225,10 @@ public class GameMesserScript : MonoBehaviour {
 			pipeMovement = shootHit.transform.GetComponent<PipeMovement> ();
 		}
 		if (pipeMovement != null) {
-			pipeMovement.setUnpickable();
+			pipeMovement.setUnpickable ();
+			gms.addBlue();
+		} else {
+			gms.addGreen();
 		}
 	}
 
