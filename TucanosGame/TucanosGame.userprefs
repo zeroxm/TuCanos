@@ -1,13 +1,13 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\TucanosGame\Assets\Scripts\Menu.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\NextStageManager.cs">
     <Files>
-      <File FileName="..\TucanosGame\Assets\Scripts\Menu.js" Line="40" Column="2" />
-      <File FileName="..\TucanosGame\Assets\Scripts\CameraFollow.cs" Line="23" Column="1" />
-      <File FileName="..\TucanosGame\Assets\Scripts\GameMonitorScript.cs" Line="1" Column="1" />
-      <File FileName="..\TucanosGame\Assets\Scripts\MatrixManager.cs" Line="1" Column="1" />
-      <File FileName="..\TucanosGame\Assets\Scripts\GameStartScript.cs" Line="83" Column="1" />
-      <File FileName="..\TucanosGame\Assets\Scripts\ItemPicker.cs" Line="71" Column="1" />
+      <File FileName="Assets\Scripts\GameMonitorScript.cs" Line="50" Column="48" />
+      <File FileName="Assets\Scripts\MatrixManager.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\GameMesserScript.cs" Line="57" Column="3" />
+      <File FileName="Assets\Scripts\ItemPicker.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\PipeMovement.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\NextStageManager.cs" Line="47" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

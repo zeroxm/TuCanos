@@ -4,6 +4,7 @@ using System.Collections;
 public class PipeMovement : MonoBehaviour {
 
 	bool picked =false;
+	bool pickable = true;
 	Vector3 targetPosition;
 	GameObject gameMonitor;
 	GameMonitorScript gms;
@@ -23,8 +24,10 @@ public class PipeMovement : MonoBehaviour {
 		}
 	}
 
-	public void togglePicked(){
+	public bool togglePicked(){
+		if(pickable)
 		picked = !picked;
+		return picked;
 	}
 
 	public void rotate(){
@@ -88,6 +91,10 @@ public class PipeMovement : MonoBehaviour {
 
 	public void clearPositionOnMonitor(){
 		gms.getPipe(this.transform.position);
+	}
+
+	public void setUnpickable(){
+		pickable = false;
 	}
 
 }

@@ -13,12 +13,14 @@ public class ItemPicker : MonoBehaviour {
 	GameObject mainCamera;
 	Pause pause;
 	bool disabled;
+	AudioSource[] audioSources;
 	
 	// Use this for initialization
 	void Start () {
 		playerMovement = this.GetComponent<PlayerMovement> ();
 		mainCamera = GameObject.FindGameObjectWithTag ("MainCamera");
 		pause = mainCamera.GetComponent<Pause> ();
+		audioSources = this.GetComponents<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -34,9 +36,14 @@ public class ItemPicker : MonoBehaviour {
 				if (Physics.Raycast (shootRay, out shootHit, 1.2f)) {
 					pipeMovement = shootHit.transform.GetComponent<PipeMovement> ();
 					if (pipeMovement != null) {
-						pipeMovement.clearPositionOnMonitor();
-						pipeMovement.togglePicked ();
-						temPeca = true;
+						if(pipeMovement.togglePicked ()){
+							pipeMovement.clearPositionOnMonitor();
+							temPeca = true;
+							audioSources[1].Play();
+						}
+						else{
+							audioSources[0].Play();
+						}
 					}
 				}
 			}
@@ -44,16 +51,20 @@ public class ItemPicker : MonoBehaviour {
 				shootRay.origin = transform.position;
 				shootRay.direction = transform.TransformDirection (Vector3.back);
 				if (Physics.Raycast (shootRay, out shootHit, 1.2f))
-					print("Too close to PutDown");
-				else if(putDown())
+					audioSources[0].Play();
+				else if(putDown()){
 					temPeca= false;
+					audioSources[1].Play();
+				}
 				}
 		}
 		if (Input.GetButtonDown ("Fire1")) {
-			if(temPeca)
+			if(temPeca){
 			rotate();
-				}
+			audioSources[2].Play();
 			}
+			}
+	}
 
 	void rotate(){
 		pipeMovement.rotate ();

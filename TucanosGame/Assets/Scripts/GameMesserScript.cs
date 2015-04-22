@@ -5,18 +5,22 @@ public class GameMesserScript : MonoBehaviour {
 
 	public TimerManager timeManager;
 	public GameObject water;
+	GameObject waterPound;
 	public GameMonitorScript gms;
-	public bool movingHorizontally;
-	public bool goingDown;
-	public bool goingLeft;
-	public int currentTime = 0;
-	public int currentPipe;
-	public int index; // 1 - for the first half     2 - for the other half
-	public int xConvertionFactor;
-	public int zConvertionFactor;
-	public int cursorX=0;
-	public int cursorZ=0;
-	public int timeInt;
+	Ray shootRay;
+	RaycastHit shootHit;
+	PipeMovement pipeMovement;
+	bool movingHorizontally;
+	bool goingDown;
+	bool goingLeft;
+	int currentTime = 0;
+	int currentPipe;
+	int index; // 1 - for the first half     2 - for the other half
+	int xConvertionFactor;
+	int zConvertionFactor;
+	int cursorX=0;
+	int cursorZ=0;
+	int timeInt;
 
 	const int empty = 0;
 	const int start = 1;
@@ -43,11 +47,14 @@ public class GameMesserScript : MonoBehaviour {
 		zConvertionFactor = gms.zConvertionFactor;
 		movingHorizontally = false;
 		goingDown = true;
+		timeInt = 4;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (((int)timeManager.getCurrentTime()) % 4 == 0 && currentTime!=(int)timeManager.getCurrentTime()) 
+		if (gms.isWinner())
+			spawnWaterElement();
+		if (((int)timeManager.getCurrentTime()) % timeInt == 0 && currentTime!=(int)timeManager.getCurrentTime()) 
 		{
 			currentTime = (int)timeManager.getCurrentTime();
 			spawnWaterElement();
@@ -62,39 +69,46 @@ public class GameMesserScript : MonoBehaviour {
 				if (goingDown) {
 					if(gms.canIGoDown(cursorZ,cursorX)){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX,2f,zConvertionFactor-cursorZ+0.25f), new Quaternion (90,0,0,90));
+						this.transform.position= new Vector3(xConvertionFactor+cursorX,8f,zConvertionFactor-cursorZ);
+						shootParalyzingBean();
 						index =2;
 					}
 					else {
-						Debug.Log("YouLose");
+						startGameLoseProcess(cursorX, cursorZ);
 					}
 
 				} else {
 					if(gms.canIGoUp(cursorZ,cursorX)){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX,2f,zConvertionFactor-cursorZ-0.25f), new Quaternion (90,0,0,90));
+						this.transform.position= new Vector3(xConvertionFactor+cursorX,8f,zConvertionFactor-cursorZ);
+						shootParalyzingBean();
 						index =2;
 					}
 					else{
-						Debug.Log("YouLose");
+						startGameLoseProcess(cursorX, cursorZ);
 					}
-
 				}
 			} else {
 				if (goingLeft) {
 					if(gms.canIGoLeft(cursorZ,cursorX)){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX+0.25f,2f,zConvertionFactor-cursorZ), new Quaternion (90,90,0,0));
+						this.transform.position= new Vector3(xConvertionFactor+cursorX,8f,zConvertionFactor-cursorZ);
+						shootParalyzingBean();
 						index =2;
 					}
 					else{
-						Debug.Log("YouLose");
+						startGameLoseProcess(cursorX, cursorZ);
 					}
 				}
 				else{
 					if(gms.canIGoRight(cursorZ,cursorX)){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX-0.25f,2f,zConvertionFactor-cursorZ), new Quaternion (90,90,0,0));
+						this.transform.position= new Vector3(xConvertionFactor+cursorX,8f,zConvertionFactor-cursorZ);
+						shootParalyzingBean();
 						index =2;
 					}
 					else{
-						Debug.Log("YouLose");
+						startGameLoseProcess(cursorX, cursorZ);
 					}
 				}
 			}
@@ -198,6 +212,21 @@ public class GameMesserScript : MonoBehaviour {
 		}
 
 	}
+	void  startGameLoseProcess(int cursorX, int cursorZ){
+		waterPound = GameObject.FindGameObjectWithTag("Water");
+		waterPound.transform.position = new Vector3 (xConvertionFactor + cursorX, 2f, zConvertionFactor - cursorZ);
+		gms.gameLoseProcess ();
+	}
 
+	void shootParalyzingBean(){
+		shootRay.origin = transform.position;
+		shootRay.direction = transform.TransformDirection (Vector3.down);
+		if (Physics.Raycast (shootRay, out shootHit, 10f)) {
+			pipeMovement = shootHit.transform.GetComponent<PipeMovement> ();
+		}
+		if (pipeMovement != null) {
+			pipeMovement.setUnpickable();
+		}
+	}
 
 }

@@ -47,18 +47,18 @@ public class GameMonitorScript : MonoBehaviour {
 			hudAnimator.SetTrigger ("NextStage");
 			}
 			if (winner && hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("GameFadeOut")) {	
-			audioSources [2].Play ();
-			winner = false;
+				//Something to add while the game fades out
+			}
+			if (hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("GameFinishLoseWaitScreen") && Input.GetButtonDown ("Jump")) {
+			Application.LoadLevel(Application.loadedLevelName);
 			}
 			if (hudAnimator.GetCurrentAnimatorStateInfo (0).IsName ("NextStage")) 
 			Application.LoadLevel(nextStage.getNextStage());
 	}
 
 	public void setPipe(Vector3 position, int pipeType){
-		Debug.Log(zConvertionFactor-Mathf.RoundToInt(position.z));
 		numbers[zConvertionFactor-Mathf.RoundToInt(position.z),Mathf.RoundToInt(position.x)-xConvertionFactor]=pipeType;
 		didIWin ();
-
 	}
 
 	public void getPipe(Vector3 position){
@@ -77,7 +77,6 @@ public class GameMonitorScript : MonoBehaviour {
 
 
 	void goDown(int cursorZ, int cursorX){
-		//Debug.Log (numbers [cursorZ, cursorX]);
 		if (numbers [cursorZ, cursorX] == verticalEnd 
 		    || numbers [cursorZ, cursorX] == upRightEnd
 		    || numbers [cursorZ, cursorX] == leftUpEnd) {
@@ -98,7 +97,6 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goUp(int cursorZ, int cursorX){
-		//Debug.Log (numbers [cursorZ, cursorX]);
 		if (numbers [cursorZ, cursorX] == verticalEnd 
 		    || numbers [cursorZ, cursorX] == rightDownEnd
 		    || numbers [cursorZ, cursorX] == downleftEnd) {
@@ -119,7 +117,6 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goLeft(int cursorZ, int cursorX){
-		//Debug.Log (numbers [cursorZ, cursorX]);
 		if (numbers [cursorZ, cursorX] == horizontalEnd
 		    || numbers [cursorZ, cursorX] == upRightEnd
 		    || numbers [cursorZ, cursorX] == rightDownEnd) {
@@ -140,7 +137,6 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	void goRight(int cursorZ, int cursorX){
-		//Debug.Log (numbers [cursorZ, cursorX]);
 		if (numbers [cursorZ, cursorX] == horizontalEnd
 		    || numbers [cursorZ, cursorX] == downleftEnd
 		    || numbers [cursorZ, cursorX] == leftUpEnd) {
@@ -237,5 +233,17 @@ public class GameMonitorScript : MonoBehaviour {
 		timerManager.stop ();
 		audioSources [1].Play ();
 		hudAnimator.SetTrigger ("Win");
+	}
+
+	public void gameLoseProcess(){
+		playerMovement.disable ();
+		audioSources [0].Stop ();
+		timerManager.stop ();
+		audioSources [3].Play ();
+		hudAnimator.SetTrigger ("Lose");
+	}
+
+	public bool isWinner(){
+		return winner;
 	}
 }

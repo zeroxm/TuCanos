@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 	int floorMask;                      // A layer mask so that a ray can be cast just at gameobjects on the floor layer.
 	float camRayLength = 500f;          // The length of the ray from the camera into the scene.
-	bool disabled;
+	bool disabled, holdPosition;
 
 	void Awake ()
 	{
@@ -30,10 +30,9 @@ public class PlayerMovement : MonoBehaviour
 			float h = Input.GetAxisRaw ("Horizontal");
 			float v = Input.GetAxisRaw ("Vertical");
 		
-			// Move the player around the scene.
-			Move (h, v);
-		
-			// Turn the player to face the mouse cursor.
+			// Move the player around the scene
+				Move(h,v);
+			// Turn the player to face the direction
 			Turning (h, v);
 		}
 	}
