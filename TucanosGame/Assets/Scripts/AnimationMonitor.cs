@@ -3,8 +3,11 @@ using System.Collections;
 
 public class AnimationMonitor : MonoBehaviour {
 
+
+
 	// Use this for initialization
 	void Start () {
+
 	
 	}
 	
@@ -12,4 +15,5 @@ public class AnimationMonitor : MonoBehaviour {
 	void Update () {
 	
 	}
+	
 }

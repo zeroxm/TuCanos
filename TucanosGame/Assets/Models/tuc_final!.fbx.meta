@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: fe6a68de98934fc498dc76eae2bb9df3
+timeCreated: 1429844081
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: curve1
+    100002: group
+    100004: group1
+    100006: group2
+    100008: group5
+    100010: group6
+    100012: group7
+    100014: ikHandle2
+    100016: ikHandle3
+    100018: ikHandle5
+    100020: ikHandle6
+    100022: joint1
+    100024: joint11
+    100026: joint12
+    100028: joint17
+    100030: joint18
+    100032: joint19
+    100034: joint2
+    100036: joint20
+    100038: joint21
+    100040: joint22
+    100042: joint3
+    100044: joint4
+    100046: joint5
+    100048: joint6
+    100050: motionTrail1Handle
+    100052: nurbsCircle1
+    100054: nurbsCircle3
+    100056: nurbsCircle4
+    100058: nurbsCircle5
+    100060: pasted__group5
+    100062: pasted__group5 1
+    100064: pasted__ikHandle6
+    100066: pasted__joint14
+    100068: pasted__joint15
+    100070: pasted__joint16
+    100072: pasted__pCube2
+    100074: pasted__pCube2 1
+    100076: pCube3
+    100078: polySurface24
+    100080: //RootNode
+    400000: curve1
+    400002: group
+    400004: group1
+    400006: group2
+    400008: group5
+    400010: group6
+    400012: group7
+    400014: ikHandle2
+    400016: ikHandle3
+    400018: ikHandle5
+    400020: ikHandle6
+    400022: joint1
+    400024: joint11
+    400026: joint12
+    400028: joint17
+    400030: joint18
+    400032: joint19
+    400034: joint2
+    400036: joint20
+    400038: joint21
+    400040: joint22
+    400042: joint3
+    400044: joint4
+    400046: joint5
+    400048: joint6
+    400050: motionTrail1Handle
+    400052: nurbsCircle1
+    400054: nurbsCircle3
+    400056: nurbsCircle4
+    400058: nurbsCircle5
+    400060: pasted__group5
+    400062: pasted__group5 1
+    400064: pasted__ikHandle6
+    400066: pasted__joint14
+    400068: pasted__joint15
+    400070: pasted__joint16
+    400072: pasted__pCube2
+    400074: pasted__pCube2 1
+    400076: pCube3
+    400078: polySurface24
+    400080: //RootNode
+    2300000: pasted__pCube2
+    2300002: pasted__pCube2 1
+    2300004: pCube3
+    3300000: pasted__pCube2
+    3300002: pasted__pCube2 1
+    3300004: pCube3
+    4300000: pasted__pCube2
+    4300002: pasted__pCube2
+    4300004: pCube3
+    4300006: polySurface24
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: polySurface24
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 24
+      wrapMode: 2
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 1
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: group
+        weight: 1
+      - path: group/pasted__pCube2
+        weight: 1
+      - path: group1
+        weight: 1
+      - path: group1/pasted__pCube2 1
+        weight: 1
+      - path: group2
+        weight: 1
+      - path: group5
+        weight: 1
+      - path: group6
+        weight: 1
+      - path: group6/pasted__group5
+        weight: 1
+      - path: group7
+        weight: 1
+      - path: group7/pasted__group5 1
+        weight: 1
+      - path: group7/pasted__ikHandle6
+        weight: 1
+      - path: ikHandle2
+        weight: 1
+      - path: ikHandle3
+        weight: 1
+      - path: ikHandle5
+        weight: 1
+      - path: ikHandle6
+        weight: 1
+      - path: joint1
+        weight: 1
+      - path: joint1/curve1
+        weight: 1
+      - path: joint1/joint2
+        weight: 1
+      - path: joint1/joint2/joint3
+        weight: 1
+      - path: joint1/joint2/joint3/joint11
+        weight: 1
+      - path: joint1/joint2/joint3/joint11/joint12
+        weight: 1
+      - path: joint1/joint2/joint3/joint20
+        weight: 1
+      - path: joint1/joint2/joint3/joint20/joint21
+        weight: 1
+      - path: joint1/joint2/joint3/joint20/joint21/joint22
+        weight: 1
+      - path: joint1/joint2/joint3/pasted__joint14
+        weight: 1
+      - path: joint1/joint2/joint3/pasted__joint14/pasted__joint15
+        weight: 1
+      - path: joint1/joint2/joint3/pasted__joint14/pasted__joint15/pasted__joint16
+        weight: 1
+      - path: joint1/joint2/joint4
+        weight: 1
+      - path: joint1/joint2/joint4/joint5
+        weight: 1
+      - path: joint1/joint2/joint4/joint5/joint6
+        weight: 1
+      - path: joint1/joint2/joint17
+        weight: 1
+      - path: joint1/joint2/joint17/joint18
+        weight: 1
+      - path: joint1/joint2/joint17/joint18/joint19
+        weight: 1
+      - path: joint1/nurbsCircle1
+        weight: 1
+      - path: joint1/nurbsCircle3
+        weight: 1
+      - path: joint1/nurbsCircle4
+        weight: 1
+      - path: joint1/nurbsCircle5
+        weight: 1
+      - path: motionTrail1Handle
+        weight: 1
+      - path: pCube3
+        weight: 1
+      - path: polySurface24
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
