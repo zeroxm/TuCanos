@@ -14,6 +14,8 @@ public class AnimationMonitor : MonoBehaviour {
 	Animator speechAnimator;
 	int currentText;
 	Text bubbleText;
+	NextStageManager nextStage;
+
 
 	// Use this for initialization
 	void Start () {
@@ -26,6 +28,8 @@ public class AnimationMonitor : MonoBehaviour {
 		currentText = 0;
 		speechAnimator.SetBool ("isFontanero", isFontaneiro);
 		bubbleText = speechBubble.GetComponentInChildren<Text>();
+		nextStage = this.GetComponent<NextStageManager> ();
+
 	}
 	
 	// Update is called once per frame
@@ -40,10 +44,14 @@ public class AnimationMonitor : MonoBehaviour {
 		}
 		if(dialogOver)
 			mainAnimator.SetTrigger("dialogOver");
+		if (Input.GetButtonDown ("Fire1") || (mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission00_nextLevel") || mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission01_nextLevel") || mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission02_nextLevel") || mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission03_nextLevel")))
+			Application.LoadLevel(nextStage.getNextStage());
+
 	}
 
 	void nextText(){
 		if (dialog.Length == currentText) {
+			bubbleText.text = "";
 			dialogOver = true;
 		} else {
 			isFontaneiro = !isFontaneiro;

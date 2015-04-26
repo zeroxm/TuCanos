@@ -69,7 +69,6 @@ public class GameMonitorScript : MonoBehaviour {
 	public void didIWin(){
 		int cursorZ = 0;
 		int cursorX = 0;
-		bool canWalk = true;
 		cursorZ++;
 		if(canIGoDown(cursorZ,cursorX)){
 			goDown (cursorZ, cursorX);
