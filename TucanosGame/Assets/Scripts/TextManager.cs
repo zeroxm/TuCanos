@@ -38,7 +38,42 @@ public class TextManager : MonoBehaviour {
 				"Gracias, me voy"
 			};
 		}
-
+		if (Application.loadedLevelName.Equals("Intermission_01", System.StringComparison.OrdinalIgnoreCase)) {
+			dialog = new string[]{"Buenos dias!", 
+				"Buon Giorno!",
+				"Me parece europeo, tu eres espanhol?",
+				"No, no, io sou italiano",
+				"Ahh si, bueno, vim resolver lo problema com los encanamentos,",
+				"Ahh que bene, meu carro estava ficando imundo! Ja faz uma semana que nao lavo ele",
+				"Oh, no, no!\nEm epocas de pouca agua nao podemos gastar tanto assim, lavar o carro so uma vez por mes",
+				"Mas a Ferrari fica tao bonita depois de uma lavagem...",
+				"Nada disso! Ela bebe gasolina, no agua.\nE quando for lavar, faça isso usando um balde",
+				"Mas da mais trabalho",
+				"Una mangueira aberta durante a lavagem de um carro gasta 600 Litros, isso e o que uma pessoa precisa para viver por 1 semana!",
+				"Ok, ok, isso e muita coisa",
+				"Que bom que voce entende, bueno, por onde yo começo?",
+				"Ahh, logo aqui atras fica a entrada para os encanamentos",
+				"Gracias, bueno, me boy!"
+			};
+		}
+		if (Application.loadedLevelName.Equals("Intermission_03", System.StringComparison.OrdinalIgnoreCase)) {
+			dialog = new string[]{"Buenas tardes!", 
+				"Boa tarde!",
+				"Yo vim para consertar los encanamentos.",
+				"Ahh, sim, eu ouvi falar, 30% com vazamentos, que loucura",
+				"Tu no pareces muito afetado por isso",
+				"Ahh sim, de onde eu venho nos ja sofremos com escasses de agua, entao, a gente aprende desde cedo a economizar e usar bem",
+				"Entendo, sinto mucho por isso",
+				"Ahh nao precisa, poderia acontecer em qualquer lugar do mundo, e ja acontece em outros pontos do pais",
+				"Eh verdade, lo problema eh que quando se tem mucho de algo, so se preocupa com sua falta quando ja esta acabando",
+				"E mesmo pequenas perdas de recursos podem causar grandes problemas a longo prazo",
+				"Una mangueira aberta durante a lavagem de um carro gasta 600 Litros, isso e o que uma pessoa precisa para viver por 1 semana!",
+				"Ok, ok, isso e muita coisa",
+				"Que bom que voce entende, bueno, por onde yo começo?",
+				"Ahh, logo aqui atras fica a entrada para os encanamentos",
+				"Gracias, bueno, me boy!"
+			};
+		}
 	}
 	
 	// Update is called once per frame
