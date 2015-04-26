@@ -7,7 +7,7 @@ public class TrollCanoScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		troubleMaker = GameObject.FindGameObjectWithTag ("Player").GetComponent<GameMesserScript> ();
+		troubleMaker = GameObject.FindGameObjectWithTag ("GameController").GetComponent<GameMesserScript> ();
 	}
 	
 	// Update is called once per frame
