@@ -1,11 +1,9 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\TucanosGame\Assets\Scripts\GameStartScript.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="..\TucanosGame\Assets\Scripts\MatrixManager.cs">
     <Files>
-      <File FileName="..\TucanosGame\Assets\Scripts\Menu.js" Line="12" Column="14" />
-      <File FileName="Assets\Scripts\TrollCanoScript.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\GameMesserScript.cs" Line="1" Column="1" />
-      <File FileName="..\TucanosGame\Assets\Scripts\GameStartScript.cs" Line="76" Column="1" />
+      <File FileName="..\TucanosGame\Assets\Scripts\GameStartScript.cs" Line="1" Column="1" />
+      <File FileName="..\TucanosGame\Assets\Scripts\MatrixManager.cs" Line="121" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
