@@ -26,15 +26,7 @@ function OnGUI(){
 		Application.LoadLevel("Level_01");
 	}
 	
-	if(GUI.Button(Rect(posicaoX,posicaoY + 90,largura,altura),"2p Coop")){
-		Application.LoadLevel("Level_01");
-	}
-	
-	if(GUI.Button(Rect(posicaoX,posicaoY + 150,largura,altura),"Time Atack")){
-		Application.LoadLevel("Level_01");
-	}
-	
-	if(GUI.Button(Rect(posicaoX,posicaoY + 210,largura,altura),"Exit")){
+	if(GUI.Button(Rect(posicaoX,posicaoY + 90,largura,altura),"Exit")){
 		Application.Quit();
 	}
 }
