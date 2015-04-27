@@ -58,7 +58,6 @@ public class GameMonitorScript : MonoBehaviour {
 	}
 
 	public void setPipe(Vector3 position, int pipeType){
-		Debug.Log (zConvertionFactor-Mathf.RoundToInt(position.z)); 
 		numbers[zConvertionFactor-Mathf.RoundToInt(position.z),Mathf.RoundToInt(position.x)-xConvertionFactor]=pipeType;
 		didIWin ();
 	}
