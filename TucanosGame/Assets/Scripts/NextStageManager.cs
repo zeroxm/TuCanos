@@ -42,7 +42,10 @@ public class NextStageManager : MonoBehaviour {
 			nextStage = "Level_08";
 		}
 		else if (nextStage.Equals ("Level_08")) {
-			nextStage = "End_Game";
+			nextStage = "EndGame";
+		}
+		else if (nextStage.Equals ("EndGame")) {
+			nextStage = "Creditz";
 		}
 
 	}

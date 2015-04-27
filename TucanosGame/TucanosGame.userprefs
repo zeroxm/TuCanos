@@ -1,9 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TextManager.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\GameMonitorScript.cs">
     <Files>
-      <File FileName="Assets\Scripts\TextManager.cs" Line="54" Column="37" />
-      <File FileName="Assets\Scripts\AnimationMonitor.cs" Line="54" Column="24" />
+      <File FileName="Assets\Scripts\GameStartScript.cs" Line="25" Column="1" />
+      <File FileName="Assets\Scripts\TextManager.cs" Line="102" Column="1" />
+      <File FileName="Assets\Scripts\AnimationMonitor.cs" Line="76" Column="1" />
+      <File FileName="Assets\Scripts\GameMonitorScript.cs" Line="259" Column="1" />
+      <File FileName="Assets\Scripts\MatrixManager.cs" Line="94" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
