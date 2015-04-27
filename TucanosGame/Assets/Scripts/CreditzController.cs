@@ -7,14 +7,18 @@ public class CreditzController : MonoBehaviour {
 	Text[] text;
 	int currentText;
 	int textBefore;
-	string[] titulos = new string[]{"",	"Programadores", "Design Grafico","Roteiro","Audio","Beta Testers","Inspiraçoes","Agradecimentos Especiais"};
-	string[] conteudos = new string[]{"",	"Andre Xavier Martinez\nLuiz Correira Bohn Neto\nVictor Arruda Ganciar",
-										"Andre Xavier Martinez\nCamila Rodrigues",
-										"Andre Xavier Martinez\nLuiz Correira Bohn Neto\nVictor Arruda Ganciar",
-										"Andre Xavier Martinez\nRodrigo da Silva Cardoso",
-										"Rodrigo da Silva Cardoso\nAlvaro Silvestre\nEstela de Oliveira Guimaraes",
-										"No more Heros 2 - Desperate Struggle\nMario Bros.\nNintendo - Sega",
-										"UFABC GAMES\nMae\nAlynne Perricci Silva\nAdamarys Regina Freire\nEstela de Oliveira Guimaraes\nGeraldo Alkmin"};
+	string[] titulos = new string[]{"",	"Programadores", "Design Grafico","Roteiro","Audio","Animacoes","Beta Testers","Inspiracoes","Creditos Musicais","Creditos Musicais","Creditos Musicais","Agradecimentos Especiais"};
+	string[] conteudos = new string[]{"",	"\nAndre Xavier Martinez\nLuiz Correira Bohn Neto\nVictor Arruda Ganciar",
+										"\nAndre Xavier Martinez\nCamila Rodrigues",
+										"\nAndre Xavier Martinez\nLuiz Correira Bohn Neto\nVictor Arruda Ganciar",
+										"\nAndre Xavier Martinez\nRodrigo da Silva Cardoso",
+										"\nAndre Xavier Martinez\nCamila Rodrigues\nVictor Arruda Ganciar",
+										"\nRodrigo da Silva Cardoso\nAlvaro Silvestre\nEstela de Oliveira Guimaraes",
+										"\nNo more Heros 2 - Desperate Struggle\nMario Bros.\nNintendo - Sega",
+										"\nLay The Pipe - Type A\nLay The Pipe - Type B\nGo Straight - Streets of Rage 2\nBig Blue - F-Zero",
+										"\nDragon Road - Sonic Unleashed\nRooftop Run - Sonic Generations\nExplorer - Collumns 3",
+										"\nStage Clear - Super Mario World\nDonut Plains - Super Mario World\nEnding Credits - Sonic 3",
+										"\nUFABC GAMES\nNossas Maes, Pais e Familias\nAlynne Perricci Silva\nAdamarys Regina Freire\nGeraldo Alkmin"};
 	Animator creditsAnimator;
 
 	// Use this for initialization
