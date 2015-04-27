@@ -45,8 +45,13 @@ public class Pause : MonoBehaviour {
 			Time.timeScale = 1;
 			controlePause = true;
 		}
-		if(GUI.Button(new Rect(posicaoX,posicaoY + 75,largura,altura),"Exit")){
-			Application.LoadLevel("MenuPrincipal");
+		if(GUI.Button(new Rect(posicaoX,posicaoY + 75,largura,altura),"Restart")){
+				Time.timeScale = 1;
+				Application.LoadLevel(Application.loadedLevelName);
+				//Application.restart();
+		}
+		if(GUI.Button(new Rect(posicaoX,posicaoY + 140,largura,altura),"Exit")){
+				Application.LoadLevel("MenuTitulo");
 			//Application.Quit();
 		}
 	}	

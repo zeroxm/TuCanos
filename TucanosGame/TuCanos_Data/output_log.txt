@@ -18,7 +18,7 @@ Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed
 Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\Assembly-UnityScript.dll into Unity Child Domain
 Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.036 seconds
+- Completed reload, in  0.035 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
@@ -26,126 +26,46 @@ desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\A\Downloads\TuCanos\TucanosGame\TuCanos_Data\Managed\System.dll (this message is harmless)
 Setting up 1 worker threads for Enlighten.
-  Thread -> id: 14d4 -> priority: 1 
+  Thread -> id: dc8 -> priority: 1 
 Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 3.855346 ms
+UnloadTime: 3.787431 ms
 
 Unloading 15 unused Assets to reduce memory usage. Loaded Objects now: 409.
-Total: 0.247655 ms (FindLiveObjects: 0.014344 ms CreateObjectMapping: 0.025175 ms MarkObjects: 0.169494 ms  DeleteObjects: 0.038348 ms)
+Total: 0.517559 ms (FindLiveObjects: 0.028395 ms CreateObjectMapping: 0.049179 ms MarkObjects: 0.351284 ms  DeleteObjects: 0.087821 ms)
 
 Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.480381 ms
+UnloadTime: 0.464280 ms
 
 Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 1044.
-Total: 0.402220 ms (FindLiveObjects: 0.031615 ms CreateObjectMapping: 0.022248 ms MarkObjects: 0.216332 ms  DeleteObjects: 0.131438 ms)
+Total: 0.364750 ms (FindLiveObjects: 0.027224 ms CreateObjectMapping: 0.021955 ms MarkObjects: 0.185595 ms  DeleteObjects: 0.129682 ms)
 
 Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
  
 (Filename:  Line: 1278)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.964275 ms
+UnloadTime: 2.085165 ms
+
+Unloading 3 unused Assets to reduce memory usage. Loaded Objects now: 1044.
+Total: 0.651925 ms (FindLiveObjects: 0.083430 ms CreateObjectMapping: 0.052399 ms MarkObjects: 0.501751 ms  DeleteObjects: 0.013465 ms)
+
+Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
+ 
+(Filename:  Line: 1278)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+UnloadTime: 0.818200 ms
 
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1072.
-Total: 0.255559 ms (FindLiveObjects: 0.031615 ms CreateObjectMapping: 0.018442 ms MarkObjects: 0.199353 ms  DeleteObjects: 0.006147 ms)
-
-Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
- 
-(Filename:  Line: 1278)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.832251 ms
-
-Unloading 69 unused Assets to reduce memory usage. Loaded Objects now: 431.
-Total: 0.328743 ms (FindLiveObjects: 0.025468 ms CreateObjectMapping: 0.014051 ms MarkObjects: 0.197597 ms  DeleteObjects: 0.091333 ms)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.401049 ms
-
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1221.
-Total: 0.404562 ms (FindLiveObjects: 0.033079 ms CreateObjectMapping: 0.019320 ms MarkObjects: 0.221601 ms  DeleteObjects: 0.130560 ms)
+Total: 0.271367 ms (FindLiveObjects: 0.033664 ms CreateObjectMapping: 0.020491 ms MarkObjects: 0.210770 ms  DeleteObjects: 0.005854 ms)
 
 Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
  
 (Filename:  Line: 1278)
 
 Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.960177 ms
+UnloadTime: 1.569070 ms
 
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1305.
-Total: 0.340453 ms (FindLiveObjects: 0.048887 ms CreateObjectMapping: 0.019320 ms MarkObjects: 0.263463 ms  DeleteObjects: 0.008196 ms)
-
-Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
- 
-(Filename:  Line: 1278)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.925341 ms
-
-Unloading 70 unused Assets to reduce memory usage. Loaded Objects now: 405.
-Total: 0.302982 ms (FindLiveObjects: 0.018149 ms CreateObjectMapping: 0.013465 ms MarkObjects: 0.184424 ms  DeleteObjects: 0.086650 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.415686 ms
-
-Unloading 23 unused Assets to reduce memory usage. Loaded Objects now: 1484.
-Total: 0.427981 ms (FindLiveObjects: 0.039519 ms CreateObjectMapping: 0.019027 ms MarkObjects: 0.238287 ms  DeleteObjects: 0.130560 ms)
-
-Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
- 
-(Filename:  Line: 1278)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.257598 ms
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1536.
-Total: 0.578741 ms (FindLiveObjects: 0.096895 ms CreateObjectMapping: 0.039226 ms MarkObjects: 0.428567 ms  DeleteObjects: 0.013465 ms)
-
-Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
- 
-(Filename:  Line: 1278)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.125866 ms
-
-Unloading 70 unused Assets to reduce memory usage. Loaded Objects now: 415.
-Total: 0.361530 ms (FindLiveObjects: 0.025468 ms CreateObjectMapping: 0.013465 ms MarkObjects: 0.222480 ms  DeleteObjects: 0.099823 ms)
-
-Unloading 2 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.408953 ms
-
-Unloading 24 unused Assets to reduce memory usage. Loaded Objects now: 1905.
-Total: 0.551516 ms (FindLiveObjects: 0.062938 ms CreateObjectMapping: 0.032786 ms MarkObjects: 0.315570 ms  DeleteObjects: 0.139635 ms)
-
-Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
- 
-(Filename:  Line: 1278)
-
-Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.365911 ms
-
-Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1848.
-Total: 0.350113 ms (FindLiveObjects: 0.048887 ms CreateObjectMapping: 0.030444 ms MarkObjects: 0.262292 ms  DeleteObjects: 0.007903 ms)
-
-Non-convex MeshColliders with non-kinematic Rigidbodies are no longer supported in Unity 5.0.
- 
-(Filename:  Line: 1278)
-
-Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 1.416261 ms
-
-Unloading 69 unused Assets to reduce memory usage. Loaded Objects now: 693.
-Total: 0.329329 ms (FindLiveObjects: 0.025468 ms CreateObjectMapping: 0.019613 ms MarkObjects: 0.208721 ms  DeleteObjects: 0.075526 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.531317 ms
-
-Unloading 54 unused Assets to reduce memory usage. Loaded Objects now: 231.
-Total: 0.506727 ms (FindLiveObjects: 0.010831 ms CreateObjectMapping: 0.011416 ms MarkObjects: 0.180033 ms  DeleteObjects: 0.304446 ms)
-
-Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
-UnloadTime: 0.282491 ms
-
-Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 818.
-Total: 0.358602 ms (FindLiveObjects: 0.032201 ms CreateObjectMapping: 0.017856 ms MarkObjects: 0.266097 ms  DeleteObjects: 0.042154 ms)
+Unloading 76 unused Assets to reduce memory usage. Loaded Objects now: 818.
+Total: 0.764921 ms (FindLiveObjects: 0.067622 ms CreateObjectMapping: 0.045959 ms MarkObjects: 0.444667 ms  DeleteObjects: 0.205501 ms)
 
