@@ -21,7 +21,7 @@ public class TextManager : MonoBehaviour {
 				"Errr... entao... sobre isso...",
 				"Sem enrrolacao, se estamos em um momento de crise, todos tem que fazer a sua parte para ajudar",
 				"Bom, ok, comece daqui mesmo que eu ja começo pedindo para reduzirem co consumo de agua no palacio",
-				"Ok, ja vou começar entao!"
+				"Ok, gracias amigo, me voy!"
 			};
 		}
 		if (Application.loadedLevelName.Equals("Intermission_02", System.StringComparison.OrdinalIgnoreCase)) {
@@ -35,7 +35,7 @@ public class TextManager : MonoBehaviour {
 				"Ok, e melhor do que nao ter agua, ne?",
 				"Donde fica la entrada para los canos?",
 				"Ahh, ali atras, e so seguir em frente, ne?",
-				"Gracias, me voy"
+				"Gracias amigo, me voy"
 			};
 		}
 		if (Application.loadedLevelName.Equals("Intermission_01", System.StringComparison.OrdinalIgnoreCase)) {
@@ -53,7 +53,7 @@ public class TextManager : MonoBehaviour {
 				"Ok, ok, isso e muita coisa",
 				"Que bom que voce entende, bueno, por onde yo começo?",
 				"Ahh, logo aqui atras fica a entrada para os encanamentos",
-				"Gracias, bueno, me boy!"
+				"Bueno, gracias amigo, me voy!"
 			};
 		}
 		if (Application.loadedLevelName.Equals("Intermission_03", System.StringComparison.OrdinalIgnoreCase)) {
@@ -65,13 +65,27 @@ public class TextManager : MonoBehaviour {
 				"Ahh sim, de onde eu venho nos ja sofremos com escasses de agua, entao, a gente aprende desde cedo a economizar e usar bem",
 				"Entendo, sinto mucho por isso",
 				"Ahh nao precisa, poderia acontecer em qualquer lugar do mundo, e ja acontece em outros pontos do pais",
-				"Eh verdade, lo problema eh que quando se tem mucho de algo, so se preocupa com sua falta quando ja esta acabando",
+				"Eh verdade, lo problema eh que quando se tem mucho de algo, solo se preocupa com sua falta quando ja esta acabando",
 				"E mesmo pequenas perdas de recursos podem causar grandes problemas a longo prazo",
-				"Una mangueira aberta durante a lavagem de um carro gasta 600 Litros, isso e o que uma pessoa precisa para viver por 1 semana!",
-				"Ok, ok, isso e muita coisa",
-				"Que bom que voce entende, bueno, por onde yo começo?",
-				"Ahh, logo aqui atras fica a entrada para os encanamentos",
-				"Gracias, bueno, me boy!"
+				"Si, um furo de 2 milimetros desperdiça 3 caixas d'aguas inteiras em um ano",
+				"E uma torneira pingando gasta quase 50 litros por dia.",
+				"Que bueno que esteja bem informado meu amigo!\n\nPero tenho que ir, onde eu começo meu trabalho?",
+				"Ahh, siga reto aqui, nao tem como errar",
+				"Gracias amigo, bueno, me voy!"
+			};
+		}
+		if (Application.loadedLevelName.Equals("EndGame", System.StringComparison.OrdinalIgnoreCase)) {
+			dialog = new string[]{"Hola amigos!!", 
+				"Voce conseguiu Sr. Fontanero! Soh a economia que voce nos trouxe foi suficiente para voltarmos a operar com normaliade",
+				"Gracias! Pero solo fiz meu trabalho, manter a agua chegando para a populacao eh uma tarefa facil, usar essa agua direito depende de voces",
+				"A cidade de Sao Paulo sera eternamente grata a voce, seu nome aparecera em algum monumento da cidade",
+				"Bueno, nao se esqueçam das dicas de usar bem a agua que voces aprenderam nesse tempo sem agua",
+				"Sim, sim, nao esqueceremos",
+				"Mantenham os encanamentos em dia, qualquer vazamento vai acumulando um disperdicio de agua enorme",
+				"Sim, sim, manteremos",
+				"E cuidado com quem voces elegem",
+				"Sim tomaremo... o que?! Como assim?",
+				"Gracias amigos, bueno, me voy!"
 			};
 		}
 	}

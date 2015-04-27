@@ -23,7 +23,7 @@ function OnGUI(){
     GUI.skin = skin;
     
 	if(GUI.Button(Rect(posicaoX,posicaoY + 30,largura,altura),"1p Game")){
-		Application.LoadLevel("Level_01");
+		Application.LoadLevel("Intermission_00");
 	}
 	
 	if(GUI.Button(Rect(posicaoX,posicaoY + 90,largura,altura),"Exit")){

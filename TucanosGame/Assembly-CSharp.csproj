@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\AnimationMonitor.cs" />
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
+     <Compile Include="Assets\Scripts\CreditzController.cs" />
      <Compile Include="Assets\Scripts\GameMesserScript.cs" />
      <Compile Include="Assets\Scripts\GameMonitorScript.cs" />
      <Compile Include="Assets\Scripts\GameStartScript.cs" />

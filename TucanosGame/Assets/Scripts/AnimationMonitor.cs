@@ -10,6 +10,7 @@ public class AnimationMonitor : MonoBehaviour {
 	string[] dialog;
 	bool isTalking;
 	bool dialogOver;
+	bool isEndgame;
 	public bool isFontaneiro;
 	Animator speechAnimator;
 	int currentText;
@@ -29,6 +30,7 @@ public class AnimationMonitor : MonoBehaviour {
 		speechAnimator.SetBool ("isFontanero", isFontaneiro);
 		bubbleText = speechBubble.GetComponentInChildren<Text>();
 		nextStage = this.GetComponent<NextStageManager> ();
+		isEndgame = Application.loadedLevelName.Equals ("EndGame");
 
 	}
 	
@@ -43,6 +45,9 @@ public class AnimationMonitor : MonoBehaviour {
 			nextText();
 		}
 		if(dialogOver)
+			if(isEndgame)
+			mainAnimator.SetTrigger("endGameWalkAway");
+			else
 			mainAnimator.SetTrigger("dialogOver");
 		if (Input.GetButtonDown ("Fire1") || (mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission00_nextLevel") || mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission01_nextLevel") || mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission02_nextLevel") || mainAnimator.GetCurrentAnimatorStateInfo (0).IsName ("Intermission03_nextLevel")))
 			Application.LoadLevel(nextStage.getNextStage());
