@@ -59,7 +59,7 @@ public class GameMesserScript : MonoBehaviour {
 		{
 			currentTime = (int)timeManager.getCurrentTime();
 			spawnWaterElement();
-			if(currentTime%4 ==0 && currentTime <8){
+			if(currentTime%40 ==0){
 				spawnTrollcano();
 			}
 		}

@@ -17,6 +17,10 @@ public class TrollCanoScript : MonoBehaviour {
 	Vector3 runAwayTarget;
 	Transform cameraTarget;
 	AudioSource audio;
+	bool startTimer;
+	float timePassed;
+	float startTime=-1;
+
 			
 // Use this for initialization
 	void Start () {
@@ -43,8 +47,11 @@ public class TrollCanoScript : MonoBehaviour {
 			fixedPosition = this.transform.position;
 			fixedPosition.y = 4.7f;
 			this.transform.position = fixedPosition;
-			
-		}
+			} else if (startTimer){
+				checkTimer();
+			}else{
+				startTimer =true;
+			}
 		} else if (!goAway) {
 			//Determina a rotaçao e entao conserta as coordenada que nao precisam mudar
 			this.transform.LookAt (runAwayTarget);
@@ -92,6 +99,17 @@ public class TrollCanoScript : MonoBehaviour {
 			moveSpeed=5f;
 			runAwayTarget = troubleMaker.getEmptySpace();
 		} else {
+		}
+	}
+
+	void checkTimer(){
+		if (startTimer && startTime == -1) {
+			startTime= Time.time;
+		}
+		timePassed = Time.time - startTime;
+		if (timePassed%60 > 3) {
+			goAway = true;
+			runAway = true;
 		}
 	}
 }
