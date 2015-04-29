@@ -77,5 +77,10 @@ public class ItemPicker : MonoBehaviour {
 		return success;
 
 }
+
+	public void takePeca(){
+		temPeca = false;
+	}
+
 }
 

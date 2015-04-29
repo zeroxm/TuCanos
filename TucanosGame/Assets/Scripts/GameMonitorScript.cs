@@ -254,4 +254,20 @@ public class GameMonitorScript : MonoBehaviour {
 	public void addGreen(){
 		scoreManager.addGreen ();
 	}
+
+	public Vector3 findRandomEmptySpace(){
+		int x=0, z=0;
+		bool continuar = true;
+		while (continuar) {
+			x = Random.Range (0, horizontalSize);
+			z = Random.Range (0, verticalSize);
+			if(numbers[z,x]==empty){
+				continuar=false;
+			}
+		}
+		print (z + "," + x + "->" + numbers [z, x]);
+		Vector3 emptyPosition = new Vector3 (xConvertionFactor + x, 0f, zConvertionFactor - z);
+
+		return emptyPosition;
+	}
 }

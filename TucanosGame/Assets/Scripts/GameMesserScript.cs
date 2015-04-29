@@ -2,9 +2,10 @@
 using System.Collections;
 
 public class GameMesserScript : MonoBehaviour {
-
+	
 	public TimerManager timeManager;
 	public GameObject water;
+	public GameObject trollcano;
 	GameObject waterPound;
 	public GameMonitorScript gms;
 	Ray shootRay;
@@ -21,7 +22,7 @@ public class GameMesserScript : MonoBehaviour {
 	int cursorX=0;
 	int cursorZ=0;
 	int timeInt;
-
+	
 	const int empty = 0;
 	const int start = 1;
 	const int verticalPipe = 2;
@@ -36,9 +37,9 @@ public class GameMesserScript : MonoBehaviour {
 	const int rightDownEnd = 11;
 	const int downleftEnd = 12;
 	const int leftUpEnd = 13;
-
-
-
+	
+	
+	
 	// Use this for initialization
 	void Start () {
 		index = 1;
@@ -58,10 +59,19 @@ public class GameMesserScript : MonoBehaviour {
 		{
 			currentTime = (int)timeManager.getCurrentTime();
 			spawnWaterElement();
+			if(currentTime%4 ==0 && currentTime <8){
+				spawnTrollcano();
+			}
 		}
-	
+		
 	}
 
+	void spawnTrollcano(){
+		Vector3 position = GameObject.FindGameObjectWithTag ("MainCamera").transform.position;
+		Quaternion rotation = Quaternion.Euler (30f, 0, 0);
+		Instantiate (trollcano,new Vector3(position.x-10, 4.7f,position.z+12), rotation);
+		}
+	
 	void spawnWaterElement(){
 		currentPipe = gms.getPipeAt (cursorX, cursorZ);
 		if (index == 1) {
@@ -76,7 +86,7 @@ public class GameMesserScript : MonoBehaviour {
 					else {
 						startGameLoseProcess(cursorX, cursorZ);
 					}
-
+					
 				} else {
 					if(gms.canIGoUp(cursorZ,cursorX)){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX,2f,zConvertionFactor-cursorZ-0.25f), new Quaternion (90,0,0,90));
@@ -136,7 +146,7 @@ public class GameMesserScript : MonoBehaviour {
 						movingHorizontally=true;
 						goingLeft =true;
 					}
-										
+					
 				} else {					
 					if(currentPipe==verticalPipe){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX,2f,zConvertionFactor-cursorZ+0.25f), new Quaternion (90,0,0,90));
@@ -175,7 +185,7 @@ public class GameMesserScript : MonoBehaviour {
 						index =1;
 						movingHorizontally=false;
 						goingDown = false;
-
+						
 					}
 					if(currentPipe==rightDownCorner){
 						Instantiate (water,new Vector3(xConvertionFactor+cursorX,2f,zConvertionFactor-cursorZ-0.25f), new Quaternion (90,0,0,90));
@@ -210,14 +220,14 @@ public class GameMesserScript : MonoBehaviour {
 				}
 			}
 		}
-
+		
 	}
 	void  startGameLoseProcess(int cursorX, int cursorZ){
 		waterPound = GameObject.FindGameObjectWithTag("Water");
 		waterPound.transform.position = new Vector3 (xConvertionFactor + cursorX, 2f, zConvertionFactor - cursorZ);
 		gms.gameLoseProcess ();
 	}
-
+	
 	void shootParalyzingBean(){
 		shootRay.origin = transform.position;
 		shootRay.direction = transform.TransformDirection (Vector3.down);
@@ -232,4 +242,8 @@ public class GameMesserScript : MonoBehaviour {
 		}
 	}
 
+	public Vector3 getEmptySpace(){
+		return gms.findRandomEmptySpace ();
+	}
+	
 }

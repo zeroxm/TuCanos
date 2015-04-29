@@ -5,10 +5,14 @@ public class PipeMovement : MonoBehaviour {
 
 	bool picked =false;
 	bool pickable = true;
+	bool stolen= false;
 	Vector3 targetPosition;
 	GameObject gameMonitor;
 	GameMonitorScript gms;
 	public int pipeType;
+	Transform thief;
+
+
 	// Use this for initialization
 	void Start () {
 		gameMonitor = GameObject.FindGameObjectWithTag ("GameController");
@@ -17,10 +21,16 @@ public class PipeMovement : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (picked) {
-			targetPosition = GameObject.FindGameObjectWithTag("Player").transform.position;
+		if (picked){
+			if(!stolen) {
+			targetPosition = GameObject.FindGameObjectWithTag ("Player").transform.position;
+				targetPosition.y = 3.5f;
+				this.transform.position = targetPosition;
+			} if(stolen){
+			targetPosition = thief.position;
 			targetPosition.y = 3.5f;
 			this.transform.position = targetPosition;
+		}	
 		}
 	}
 
@@ -85,6 +95,17 @@ public class PipeMovement : MonoBehaviour {
 		return true;
 	}
 
+	public void dropDown(Vector3 currentPosition){
+		togglePicked ();
+		stolen = false;
+		float x = Mathf.Round (currentPosition.x);
+		float y = Mathf.Round (currentPosition.y);
+		float z = Mathf.Round (currentPosition.z);
+		this.transform.position = new Vector3(x,2f,z);
+		sendPositionToMonitor ();
+
+	}
+
 	public void sendPositionToMonitor(){
 		gms.setPipe(this.transform.position, this.pipeType);
 	}
@@ -95,6 +116,11 @@ public class PipeMovement : MonoBehaviour {
 
 	public void setUnpickable(){
 		pickable = false;
+	}
+
+	public void steal(Transform thief){
+		this.thief = thief;
+		stolen = true;
 	}
 
 }
